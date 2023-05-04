@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="admin_css/style.css">
+	<title>Macdonals</title>
+</head>
+<body>
+	<header class="head">
+		<section class="head__top">
+			<nav>
+				<ul class="head__top-list flex2">
+					<li><p>Ingredients</p></li>
+					<li><a href="/" class="none1">Домой</a></li>
+				</ul>
+			</nav>
+		</section>
+	</header>
+	<main class="main">
+		<h1>В наличии:</h1>
+		<section class="absolute">
+				{{#each foods}}
+					<section class="main__ingredient">
+						<article class="main__ingredient-item">
+							<p class="ingredient__item-type">{{this.ingredient}}</p>
+							<p class="ingredient__item-count">{{this.amount}}/{{this.max}}</p>
+							<p class="ingredient__item-type">{{this.type}}</p>
+							<div class="flex">
+								<form action="/adm/add?i=1&type={{this.type}}" method="post">
+								<button type="submit" class="ngredient__item-incr">+</button>
+								</form>
+
+								<form action="/adm/add?i=-1&type={{this.type}}" method="post">
+									<button class="ingredient__item-decr" type="submit">-</button>
+								</form>
+							</div>
+						</article>
+						<form action="/adm/delete?id={{this._id}}" method="post">
+							<button class="delete" type="submit">Удалить</button>
+						</form>
+					</section>
+				{{/each}}
+		</section>
+		<hr color="black" width="50%" height="5px">
+		<h1>Добавить:</h1>
+		<section class="product">
+			<form action="/adm/add/ingredient" method="post">
+				<h2>Название:</h2>
+				<input type="text" name="ingredient">
+				<h2>Id:</h2>
+				<input type="text" name="type">
+				<h2>Количество</h2>
+				<input type="text" name="amount">
+				<h2>Максимальное количество:</h2>
+				<input type="text" name="max"><br>
+				<button type="submit" class="main__delivery">Добавить</button>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

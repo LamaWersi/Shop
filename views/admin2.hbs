@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Info Product</title>
+	<link rel="stylesheet" href="admin2_css/style.css">
+</head>
+<body>
+	<header class="head">
+		<section class="head__top">
+			<nav>
+				<ul class="head__top-list flex">
+					<li><p>Description</p></li>
+					<li><a href="/" class="none1">Домой</a></li>
+				</ul>
+			</nav>
+		</section>
+	</header>
+	<main>
+		{{#each foods}}
+			<section class="product">
+				<article class="product__image">
+					<img class="product__image-icon" src="imgs/burger.jpg">
+				</article>
+				<article class="product__text">
+					<article class="field"><h2 class="product__text-name">Название: {{this.name}}</h2></article>
+					<article class="field"><p class="product__text-descript"><strong>Описание:</strong> {{this.description}}</p></article>
+					<article class="field"><p class="product__text-sostav"><strong>Состав:</strong> {{this.consist}}</p></article>
+					<article class="field"><p class="product__text-kalories"><strong>Каллорийность:</strong> {{this.calories}}</p></article>
+					<article class="field"><h3 class="product__text-Cost">Цена: {{this.price}} рублей</h3></article>
+				</article>
+			</section>
+			<section class="product">
+				<form action="/admfood/change?id={{this._id}}" method="post"><br>
+					<h2>{{this.name}}:</h2><br>
+					<h2>Название:</h2>
+					<input type="text" name="name" value="{{this.name}}"><br>
+					<h2>Описание:</h2>
+					<input type="text" name="description" value="{{this.description}}"><br>
+					<h2>Состав:</h2>
+					<input type="text" name="consist" value="{{this.consist}}"><br>
+					<h2>Каллорийность:</h2>
+					<input type="number" name="calories" value="{{this.calories}}"><br>
+					<h2>Цена:</h2>
+					<input type="number" name="price" value="{{this.price}}"><br>
+					<button type="submit" class="delivery">Изменить</button>
+				</form>
+				<form action="/admfood/delete?id={{this._id}}" class="form_delete" method="post">
+					<button class="delete" type="submit">Удалить</button>
+				</form>
+			</section>
+		{{/each}}
+
+		<hr color="black" width="50%" height="5px">
+
+		<section class="product">
+			<form action="/admfood/add" method="post"><br>
+					<h2>Добавить в меню:</h2><br>
+					<h2>Название:</h2>
+					<input type="text" name="name"><br>
+					<h2>Описание:</h2>
+					<input type="text" name="description"><br>
+					<h2>Состав:</h2>
+					<input type="text" name="consist"><br>
+					<h2>Каллорийность:</h2>
+					<input type="number" name="calories"><br>
+					<h2>Цена:</h2>
+					<input type="number" name="price"><br>
+					<button type="submit" class="delivery">Добавить</button>
+				</form>
+		</section>
+	</main>
+</body>
+</html>

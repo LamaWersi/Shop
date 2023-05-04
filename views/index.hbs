@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="index_css/style.css">
+	<title>Delivery donalds</title>
+</head>
+<body>
+	<header class="head">
+		<section class="head__top">
+			<ul class="head__top-list flex">
+				<li><p>Заказы</p></li>
+				<li><a href="/room" class="sign">Войти</a></li>
+			</ul>
+		</section>
+	</header>
+	<main class="main">
+		{{#each foods}}
+			<section class="card">
+				<article>
+					<img class="card__icon" src="imgs/burger.jpg">
+				</article>
+				<article class="card__descript">
+					<h2 class="card__descript-title">{{this.name}}</h2>
+					<p class="card__descript-text">{{this.description}}</p>
+					<p class="card__descript-text">Цена - {{this.price}}</p>
+					<p class="card__descript-text">Состав - {{this.consist}}</p>
+					<p class="card__descript-text">Каллорийность - {{this.calories}}</p>
+				</article>
+			</section>
+		{{/each}}
+	</main>
+	<nav class="nav">
+		<h2>Корзина:</h2>
+		<article class="nav__ul">
+			<ul class="nav__ul-list">
+				{{#each foods}}
+					<li class="ul__list-li">
+						<span>{{this.name}}</span>
+						<span class="num">0</span>
+					</li>
+				{{/each}}
+			</ul>
+			<button class="delivery" type="submit">Заказать</button>
+		</article>
+	</nav>
+	<script src="index_js/script.js"></script>
+</body>
+</html>

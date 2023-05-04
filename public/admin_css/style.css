@@ -1,0 +1,136 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: #ffb663;
+}
+
+.head {
+	width: 100%;
+	background-color: black;
+	color: white;
+}
+
+.head__top-list {
+	margin: 0;
+}
+
+.head__top-list p {
+	margin: 0;
+	padding: 2px 0;
+}
+
+.absolute {
+	display: flex;
+	flex-wrap: wrap;
+	gap:10px;
+	padding: 7px;
+}
+
+.main__ingredient {
+	width: 200px;
+	height: 250px;
+	border: solid black 1px;
+	border-radius: 50px;
+	background-color: white;
+	margin: 3px 0px;
+	padding: 7px;
+}
+
+.main__ingredient-item {
+	top: 28px;
+}
+
+.ingredient__item-type {
+	margin: 0;
+	text-align: center;
+}
+
+.ingredient__item-count {
+	margin: 10px 80px 0 80px;;
+}
+
+.ngredient__item-incr {
+	margin: 0 69px;
+	transition: ease-in 0.3s;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	border: none;
+	background-color: #038720;
+	color: white;
+}
+
+.ngredient__item-incr:hover {
+	transform: scale(1.2,1.2)
+}
+
+.ingredient__item-decr {
+	margin: 10px 69px 0 69px;
+	transition: ease-in 0.3s;
+	width: 30px;
+	height: 30px;
+	border-radius: 50px;
+	border: none;
+	background-color: #870303;
+	color: white;
+}
+
+.ingredient__item-decr:hover {
+	transform: scale(1.2,1.2)
+}
+
+.main__delivery {
+	font-size: 19px;
+	transition: ease-in 0.3s;
+	width: 100px;
+	height: 40px;
+	margin-top: 20px;
+	border-radius: 15px;
+	border: none;
+	background-color: #03872D;
+	color: white;
+	box-shadow: 0 0 0 0;
+}
+
+.main__delivery:hover {
+	box-shadow: 0 0 40px 3px #03872D;
+}
+
+.delete {
+	font-size: 19px;
+	transition: ease-in 0.2s;
+	height: 40px;
+	border-radius: 15px;
+	border: none;
+	background-color: #a00000;
+	color: white;
+	box-shadow: 0 0 0 0;
+	margin: 35px;
+}
+
+.delete:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 0 35px 3px #870303;
+}
+
+.product {
+	display: inline-flex;
+	margin: 20px 10px;
+	background-color: #d0d0d0;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.flex{
+	margin: 5px 0;
+}
+.flex2{
+	display: flex;
+	gap:40px;
+	list-style-type: none;
+}
+.none1{
+	color:white;
+	text-decoration: none;
+}
